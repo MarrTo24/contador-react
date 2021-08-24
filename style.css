@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: powderblue;
+  color: black;
+  text-align: center;
+}
+
+.menor {
+  color: rgb(238, 16, 16);
+}
+
+.mayor {
+  color: rgb(65, 214, 65);
+}
+
+button {
+  margin: 0px 0.5rem;
+}

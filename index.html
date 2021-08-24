@@ -1,0 +1,59 @@
+<!--Para colocar todo el contenido en html en visual es con un signo de ! -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React CDN</title>
+    <!--INSTALACION DE REACT ENTRAR AL SIGUIENTE LINK-->
+    <!--https://es.reactjs.org/docs/cdn-links.html-->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!--En este div se va a renderizar todo lo que es react y este seria nuesto padre-->
+    <div id="root">
+        <!--Trabaja con virtual DOM solamente se pinta en tiempo de ejecucion-->
+        <!--Ocupando link de babel https://babeljs.io/setup#installation-->
+        <script type="text/babel">
+        //Esta forma ya no es eficiente y ya no se ocupa
+        //class Saludo extends React.Component
+        //const Saludo = () => {
+            //return(
+                //<ol>
+                    //<li></li>
+                    //<li></li>
+                   // <li></li>
+                //</ol>
+            //);
+        //};
+
+        const Interpolar = () => {
+
+            const [numero, setNumero] = React.useState(0);
+
+            setInterval(() => {
+                setNumero(numero + 1);
+            },1500);
+            
+            return(
+            <div>
+                <h1>Fecha: {numero}</h1>
+                <hr />
+            </div>
+            )
+        };
+
+           
+            ReactDOM.render(
+                //Otra forma de cerrar las etiquetas genedas por que hace el codigo es de la siguiente forma <Saludo />
+                <Interpolar></Interpolar>,
+                document.getElementById("root")
+                );
+        </script>
+    </div> 
+   
+</body>
+</html>
